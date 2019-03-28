@@ -4,34 +4,42 @@ using UnityEngine;
 
 public class Boat : MonoBehaviour
 {
+    public int health = 100;
     public float turnSpeed = 1f;
     public float accelSpeed = 1f;
     public float defaultDrag = 0.75f;
     public float anchorDrag = 50f;
     private bool isAnchored = false;
     private Rigidbody rb;
+    private GameObject anchor;
+    private Vector3 anchorPos;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        anchor = GameObject.FindGameObjectWithTag("Anchor");      
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)) //Anchor the ship when Space is pressed
         {
+            anchorPos = anchor.transform.position;
+
             if (isAnchored)
             {
                 isAnchored = false;
+                anchorPos.z--;
                 rb.drag = defaultDrag;
             }
             else
             {
                 isAnchored = true;
+                anchorPos.z++;
                 rb.drag = anchorDrag;
             }
+            anchor.transform.position = anchorPos; //Move anchor sprite
         }
     }
 

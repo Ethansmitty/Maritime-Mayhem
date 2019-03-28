@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Anchor
+  - Cannonball
+  - Boat
   layers:
   - Default
   - TransparentFX
@@ -13,8 +16,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Cannonball
+  - PlayerBoat
   - 
   - 
   - 
@@ -43,6 +46,9 @@ TagManager:
     locked: 0
   - name: Boats
     uniqueID: 4231333405
+    locked: 0
+  - name: Anchor
+    uniqueID: 1631037697
     locked: 0
   - name: Cannonball
     uniqueID: 43982255
