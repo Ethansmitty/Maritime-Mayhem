@@ -45,4 +45,9 @@ public class EnemyBoat : MonoBehaviour
             rb.AddForce(new Vector3(-velocity.x, rb.velocity.y, -velocity.z));
         }
     }
+
+    private void OnCBHit(int damage)
+    {
+        this.health -= damage;
+    }
 }
