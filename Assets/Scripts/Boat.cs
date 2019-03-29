@@ -9,16 +9,19 @@ public class Boat : MonoBehaviour
     public float accelSpeed = 1f;
     public float defaultDrag = 0.75f;
     public float anchorDrag = 50f;
+    public bool canShoot = true;
     private bool isAnchored = false;
     private Rigidbody rb;
     private GameObject anchor;
+    private GameObject cannon;
     private Vector3 anchorPos;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        anchor = GameObject.FindGameObjectWithTag("Anchor");      
+        anchor = GameObject.FindGameObjectWithTag("Anchor");
+        cannon = this.transform.GetChild(0).gameObject;
     }
 
     private void Update()
@@ -40,6 +43,11 @@ public class Boat : MonoBehaviour
                 rb.drag = anchorDrag;
             }
             anchor.transform.position = anchorPos; //Move anchor sprite
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            cannon.SendMessage("FireCannon");
         }
     }
 

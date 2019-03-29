@@ -6,6 +6,7 @@ using UnityEngine;
 public class Cannon : MonoBehaviour
 {
     public Rigidbody CannonballPrefab;
+    public float fireDelay = 1f;
     private Vector3 posOnScreen;
     private Vector3 mousePos;
     private Vector3 cannonRot = new Vector3(90f, 0f, 0);
@@ -20,12 +21,12 @@ public class Cannon : MonoBehaviour
         float angle = AngleBetweenTwoPoints(posOnScreen, mousePos);
         cannonRot.z = (angle + 90);
         transform.rotation = Quaternion.Euler(cannonRot);
+    }
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            Rigidbody cannonball = (Rigidbody)Instantiate(CannonballPrefab, transform.position, transform.rotation);
+    public void FireCannon()
+    {
+        Rigidbody cannonball = (Rigidbody)Instantiate(CannonballPrefab, transform.position, transform.rotation);
 
-        }
     }
 
     private float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
