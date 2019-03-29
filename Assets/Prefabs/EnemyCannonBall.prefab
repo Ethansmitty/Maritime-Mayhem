@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2072583849724966084}
   - component: {fileID: 6006799681674031030}
   - component: {fileID: 6432990488810484209}
-  m_Layer: 8
-  m_Name: Cannonball
+  m_Layer: 10
+  m_Name: EnemyCannonBall
   m_TagString: Cannonball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

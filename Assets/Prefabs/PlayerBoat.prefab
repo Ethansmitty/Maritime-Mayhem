@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3069958878237957596}
   - component: {fileID: 3069958878237957597}
   - component: {fileID: 3069958878237957584}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: PlayerBoat
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 3069958879798534423}
   - component: {fileID: 3069958879798534505}
   - component: {fileID: 3069958879798534504}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

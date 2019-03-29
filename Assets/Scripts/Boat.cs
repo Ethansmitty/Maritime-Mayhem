@@ -9,7 +9,7 @@ public class Boat : MonoBehaviour
     public float accelSpeed = 1f;
     public float defaultDrag = 0.75f;
     public float anchorDrag = 50f;
-    public bool canShoot = true;
+    public int collisionDamage = 15;
     private bool isAnchored = false;
     private Rigidbody rb;
     private GameObject anchor;
@@ -64,5 +64,13 @@ public class Boat : MonoBehaviour
     private void OnCBHit(int damage)
     {
         this.health -= damage;
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.CompareTag("Boat"))
+        {
+            this.health -= collisionDamage;
+        }
     }
 }

@@ -8,6 +8,7 @@ public class EnemyBoat : MonoBehaviour
     public float accelSpeed = 1f;
     public float followRange = 10f;
     public float minDistanceToPlayer = 1f;
+    public int collisionDamage = 15;
 
     private Rigidbody rb;
     private Transform target;
@@ -49,5 +50,13 @@ public class EnemyBoat : MonoBehaviour
     private void OnCBHit(int damage)
     {
         this.health -= damage;
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.CompareTag("Boat"))
+        {
+            this.health -= collisionDamage;
+        }
     }
 }

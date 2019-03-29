@@ -7,6 +7,8 @@ TagManager:
   - Anchor
   - Cannonball
   - Boat
+  - Trigger
+  - Tile
   layers:
   - Default
   - TransparentFX
@@ -16,10 +18,10 @@ TagManager:
   - UI
   - 
   - 
-  - Cannonball
   - PlayerBoat
+  - PlayerCannonball
+  - EnemyCannonball
   - EnemyBoat
-  - 
   - 
   - 
   - 
