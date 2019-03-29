@@ -51,7 +51,6 @@ public class Boat : MonoBehaviour
         }
     }
 
-
     void FixedUpdate()
     {
         float h = Input.GetAxis("Horizontal");
@@ -60,5 +59,10 @@ public class Boat : MonoBehaviour
         rb.AddTorque(0f, h * turnSpeed, 0f);
         Vector3 speed = this.transform.up * (v * accelSpeed);
         rb.AddForce(speed);
+    }
+
+    private void OnCBHit(int damage)
+    {
+        this.health -= damage;
     }
 }
