@@ -10,17 +10,12 @@ public class Cannon : MonoBehaviour
     private Vector3 mousePos;
     private Vector3 cannonRot = new Vector3(90f, 0f, 0);
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        posOnScreen = Camera.main.WorldToViewportPoint(transform.position); // Pos of cannon on screen
-        mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition); // Pos of mouse
+        posOnScreen = Camera.main.WorldToScreenPoint(transform.position); // Pos of cannon on screen
+        mousePos = Input.mousePosition; // Pos of mouse
 
         float angle = AngleBetweenTwoPoints(posOnScreen, mousePos);
         cannonRot.z = (angle + 90);

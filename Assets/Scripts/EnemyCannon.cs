@@ -1,0 +1,42 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyCannon : MonoBehaviour
+{
+    public Rigidbody CannonballPrefab;
+    public float fireRate = 2.0f;
+    private GameObject target;
+    private Vector3 posOnScreen, targetPosOnScreen;
+    private Vector3 cannonRot = new Vector3(90f, 0f, 0);
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player");
+        InvokeRepeating("FireCannon", fireRate, fireRate);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        posOnScreen = Camera.main.WorldToScreenPoint(transform.position); // Pos of cannon on screen
+        targetPosOnScreen = Camera.main.WorldToScreenPoint(target.transform.position); // Pos of target on screen
+        float angle = AngleBetweenTwoPoints(posOnScreen, targetPosOnScreen);
+        cannonRot.z = (angle + 90);
+        transform.rotation = Quaternion.Euler(cannonRot);
+        
+
+
+    }
+
+    private void FireCannon()
+    {
+        Rigidbody cannonball = (Rigidbody)Instantiate(CannonballPrefab, transform.position, transform.rotation);
+    }
+
+    private float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
+    {
+        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+    }
+}

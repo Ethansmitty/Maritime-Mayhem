@@ -53,3 +53,6 @@ TagManager:
   - name: Cannonball
     uniqueID: 43982255
     locked: 0
+  - name: Cannon
+    uniqueID: 1282212129
+    locked: 0
