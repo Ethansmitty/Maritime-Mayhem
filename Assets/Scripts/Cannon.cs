@@ -26,7 +26,6 @@ public class Cannon : MonoBehaviour
     public void FireCannon()
     {
         Rigidbody cannonball = (Rigidbody)Instantiate(CannonballPrefab, transform.position, transform.rotation);
-
     }
 
     private float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
