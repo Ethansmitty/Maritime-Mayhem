@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3061159563054872709}
   - component: {fileID: 3061159563054872714}
   - component: {fileID: 3061159563054872715}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Trigger+Z
   m_TagString: Trigger
   m_Icon: {fileID: 0}
@@ -104,4 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503705748f9bb4d48b03fcf7c669ed36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab1: {fileID: 1582692094985108963, guid: 703c34d4b85ce0d46b8a1ee09165c297, type: 3}
+  TileWithTriggers: {fileID: 1582692094985108963, guid: 703c34d4b85ce0d46b8a1ee09165c297,
+    type: 3}
+  EnemyTile: {fileID: 4465125312374245653, guid: c065a3e55be115040aee17da14c4820b,
+    type: 3}

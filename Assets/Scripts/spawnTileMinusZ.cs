@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class spawnTileMinusZ : MonoBehaviour {
 	public GameObject TileWithTriggers;
-	//add new tiles with enemy/land/gold here
-	List<GameObject> tiles = new List<GameObject>();
+    public GameObject EnemyTile;
+    //add new tiles with enemy/land/gold here
+    public static List<GameObject> tiles = new List<GameObject>();
 	void Start(){
 		tiles.Add(TileWithTriggers);
-		//add new tiles to list here
-	}
+        tiles.Add(EnemyTile);
+        //add new tiles to list here
+    }
 	
 	void OnTriggerEnter (Collider other){
 		Destroy(this);
@@ -18,7 +20,7 @@ public class spawnTileMinusZ : MonoBehaviour {
 		newPos.y = 0f;
 		newPos.z -= 8.75f;
 		if(CheckForTile(newPos)){
-			GameObject newTile = Instantiate<GameObject>(tiles[(int) Random.Range(0f,tiles.Count)]);
+			GameObject newTile = Instantiate<GameObject>(tiles[Random.Range(0,tiles.Count)]);
 			newTile.transform.position = newPos;
 			newTile.transform.localScale = new Vector3(1.0f,1.0f,1.0f);
 		}

@@ -40,13 +40,13 @@ public class Boat : MonoBehaviour
             if (isAnchored)
             {
                 isAnchored = false;
-                anchorPos.z--;
+                anchorPos.y += 15;
                 rb.drag = defaultDrag;
             }
             else
             {
                 isAnchored = true;
-                anchorPos.z++;
+                anchorPos.y -= 15;
                 rb.drag = anchorDrag;
             }
             anchor.transform.position = anchorPos; //Move anchor sprite
