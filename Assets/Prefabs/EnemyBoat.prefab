@@ -99,6 +99,9 @@ MonoBehaviour:
   accelSpeed: 10
   followRange: 10
   minDistanceToPlayer: 1.5
+  collisionDamage: 15
+  healthTextPrefab: {fileID: 4659470167885921237, guid: d9e2d2ce89818b64780f253c5de11b54,
+    type: 3}
 --- !u!54 &6611182094370535243
 Rigidbody:
   m_ObjectHideFlags: 0

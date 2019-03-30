@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boat : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class Boat : MonoBehaviour
     public float defaultDrag = 0.75f;
     public float anchorDrag = 50f;
     public int collisionDamage = 15;
+
+    public TextMesh healthTextPrefab;
+
+    private TextMesh healthText;
     private bool isAnchored = false;
     private Rigidbody rb;
     private GameObject anchor;
@@ -22,6 +27,8 @@ public class Boat : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anchor = GameObject.FindGameObjectWithTag("Anchor");
         cannon = this.transform.GetChild(0).gameObject;
+        healthText = Instantiate(healthTextPrefab);
+        healthText.GetComponent<HealthFollow>().followTarget = this.gameObject.transform;
     }
 
     private void Update()
@@ -49,6 +56,15 @@ public class Boat : MonoBehaviour
         {
             cannon.SendMessage("FireCannon");
         }
+
+        
+        healthText.text = string.Format("Health: {0}%", health);
+        if (health <=0)
+        {
+            Destroy(healthText.gameObject);
+            Destroy(this.gameObject);
+        }
+
     }
 
     void FixedUpdate()

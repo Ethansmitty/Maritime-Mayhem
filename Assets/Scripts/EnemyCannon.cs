@@ -20,12 +20,14 @@ public class EnemyCannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        posOnScreen = Camera.main.WorldToScreenPoint(transform.position); // Pos of cannon on screen
-        targetPosOnScreen = Camera.main.WorldToScreenPoint(target.position); // Pos of target on screen
-        float angle = AngleBetweenTwoPoints(posOnScreen, targetPosOnScreen);
-        cannonRot.z = (angle + 90);
-        transform.rotation = Quaternion.Euler(cannonRot);
-        
+        if (target != null)
+        {
+            posOnScreen = Camera.main.WorldToScreenPoint(transform.position); // Pos of cannon on screen
+            targetPosOnScreen = Camera.main.WorldToScreenPoint(target.position); // Pos of target on screen
+            float angle = AngleBetweenTwoPoints(posOnScreen, targetPosOnScreen);
+            cannonRot.z = (angle + 90);
+            transform.rotation = Quaternion.Euler(cannonRot);
+        }
 
 
     }

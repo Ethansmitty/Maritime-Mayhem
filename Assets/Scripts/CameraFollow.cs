@@ -10,10 +10,13 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        newPos.x = followTarget.position.x;
-        newPos.y = this.transform.position.y;
-        newPos.z = followTarget.position.z;
+        if (followTarget != null)
+        {
+            newPos.x = followTarget.position.x;
+            newPos.y = this.transform.position.y;
+            newPos.z = followTarget.position.z;
 
-        this.transform.position = newPos;
+            this.transform.position = newPos;
+        }
     }
 }
