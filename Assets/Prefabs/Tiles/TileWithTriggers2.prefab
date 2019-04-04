@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9163148860767857319}
   m_Layer: 0
-  m_Name: TileWithTriggers
+  m_Name: TileWithTriggers2
   m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ PrefabInstance:
         type: 3}
       propertyPath: TileWithTriggers
       value: 
-      objectReference: {fileID: 1582692094985108963, guid: 9061985af4870b1479e89fc7b1084eba,
+      objectReference: {fileID: 1582692094985108963, guid: 703c34d4b85ce0d46b8a1ee09165c297,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01ba36b41d98453408d71ec99f44b05e, type: 3}
@@ -207,7 +207,7 @@ PrefabInstance:
         type: 3}
       propertyPath: TileWithTriggers
       value: 
-      objectReference: {fileID: 1582692094985108963, guid: 9061985af4870b1479e89fc7b1084eba,
+      objectReference: {fileID: 1582692094985108963, guid: 703c34d4b85ce0d46b8a1ee09165c297,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2caa206137fd2184a9d2189f8fa5ea57, type: 3}
@@ -298,7 +298,7 @@ PrefabInstance:
         type: 3}
       propertyPath: TileWithTriggers
       value: 
-      objectReference: {fileID: 1582692094985108963, guid: 9061985af4870b1479e89fc7b1084eba,
+      objectReference: {fileID: 1582692094985108963, guid: 703c34d4b85ce0d46b8a1ee09165c297,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25c42a94af440974b8aa976148ecf535, type: 3}
@@ -464,7 +464,7 @@ PrefabInstance:
         type: 3}
       propertyPath: TileWithTriggers
       value: 
-      objectReference: {fileID: 1582692094985108963, guid: 9061985af4870b1479e89fc7b1084eba,
+      objectReference: {fileID: 1582692094985108963, guid: 703c34d4b85ce0d46b8a1ee09165c297,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9406cb6792958c642b412bf60169744d, type: 3}

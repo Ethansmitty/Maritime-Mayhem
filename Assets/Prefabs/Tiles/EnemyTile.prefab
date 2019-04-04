@@ -117,7 +117,8 @@ PrefabInstance:
         type: 3}
       propertyPath: TileWithTriggers
       value: 
-      objectReference: {fileID: 4465125312374245653}
+      objectReference: {fileID: 1582692094985108963, guid: 703c34d4b85ce0d46b8a1ee09165c297,
+        type: 3}
     - target: {fileID: 5753350111400593611, guid: 25c42a94af440974b8aa976148ecf535,
         type: 3}
       propertyPath: EnemyTile
@@ -212,7 +213,8 @@ PrefabInstance:
         type: 3}
       propertyPath: TileWithTriggers
       value: 
-      objectReference: {fileID: 4465125312374245653}
+      objectReference: {fileID: 1582692094985108963, guid: 703c34d4b85ce0d46b8a1ee09165c297,
+        type: 3}
     - target: {fileID: 3133856449761745027, guid: 2caa206137fd2184a9d2189f8fa5ea57,
         type: 3}
       propertyPath: EnemyTile
@@ -307,7 +309,8 @@ PrefabInstance:
         type: 3}
       propertyPath: TileWithTriggers
       value: 
-      objectReference: {fileID: 4465125312374245653}
+      objectReference: {fileID: 1582692094985108963, guid: 703c34d4b85ce0d46b8a1ee09165c297,
+        type: 3}
     - target: {fileID: 3061159563054872715, guid: 01ba36b41d98453408d71ec99f44b05e,
         type: 3}
       propertyPath: EnemyTile
@@ -544,7 +547,8 @@ PrefabInstance:
         type: 3}
       propertyPath: TileWithTriggers
       value: 
-      objectReference: {fileID: 4465125312374245653}
+      objectReference: {fileID: 1582692094985108963, guid: 703c34d4b85ce0d46b8a1ee09165c297,
+        type: 3}
     - target: {fileID: 7608761323699812123, guid: 9406cb6792958c642b412bf60169744d,
         type: 3}
       propertyPath: EnemyTile
