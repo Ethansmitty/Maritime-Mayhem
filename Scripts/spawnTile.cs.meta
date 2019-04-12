@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d5812b5c755fec4489f5526689cb454a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - TileWithTriggers: {fileID: 1582692094985108963, guid: 703c34d4b85ce0d46b8a1ee09165c297,
+      type: 3}
+  - EnemyBoat: {fileID: 6611182094370535247, guid: 2e410313254047f4c99043caecdb0d3d,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
