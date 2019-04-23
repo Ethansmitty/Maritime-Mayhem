@@ -9,6 +9,7 @@ TagManager:
   - Boat
   - Trigger
   - Tile
+  - Config
   layers:
   - Default
   - TransparentFX

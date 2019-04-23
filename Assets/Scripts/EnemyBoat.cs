@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyBoat : MonoBehaviour
 {
-    public int health = 100;
-    public float accelSpeed = 1f;
-    public float followRange = 10f;
-    public float minDistanceToPlayer = 1f;
-    public int collisionDamage = 15;
+    private int health;
+    private float accelSpeed;
+    private float followRange;
+    private float minDistanceToPlayer;
+    private int collisionDamage;
     public TextMesh healthTextPrefab;
 
     private TextMesh healthText;
@@ -19,6 +19,12 @@ public class EnemyBoat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().enemyHealth;
+        accelSpeed = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().enemyAccelSpeed;
+        followRange = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().enemyFollowRange;
+        minDistanceToPlayer = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().enemyMinDistanceToPlayer;
+        collisionDamage = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().enemyCollisionDamage;
+
         target = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody>();
 

@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class Boat : MonoBehaviour
 {
-    public int health = 100;
-    public float turnSpeed = 1f;
-    public float accelSpeed = 1f;
-    public float defaultDrag = 0.75f;
-    public float anchorDrag = 50f;
-    public int collisionDamage = 15;
+    private int health;
+    private float turnSpeed;
+    private float accelSpeed;
+    private float defaultDrag;
+    private float anchorDrag;
+    private int collisionDamage;
 
     public TextMesh healthTextPrefab;
 
@@ -24,6 +24,13 @@ public class Boat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().playerHealth;
+        turnSpeed = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().playerTurnSpeed;
+        accelSpeed = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().playerAccelSpeed;
+        defaultDrag = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().playerDefaultDrag;
+        anchorDrag = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().playerAnchorDrag;
+        collisionDamage = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().playerCollisionDamage;
+
         rb = GetComponent<Rigidbody>();
         anchor = GameObject.FindGameObjectWithTag("Anchor");
         cannon = this.transform.GetChild(0).gameObject;
@@ -58,7 +65,7 @@ public class Boat : MonoBehaviour
         }
 
         
-        healthText.text = string.Format("Health: {0}%", health);
+        healthText.text = string.Format("Health: {0}%", this.health);
         if (health <=0)
         {
             Destroy(healthText.gameObject);
@@ -72,7 +79,7 @@ public class Boat : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        rb.AddTorque(0f, h * turnSpeed, 0f);
+        rb.AddTorque(0f, h * this.turnSpeed, 0f);
         Vector3 speed = this.transform.up * (v * accelSpeed);
         rb.AddForce(speed);
     }
@@ -89,4 +96,5 @@ public class Boat : MonoBehaviour
             this.health -= collisionDamage;
         }
     }
+
 }

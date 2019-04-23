@@ -6,12 +6,16 @@ using UnityEngine;
 public class Cannon : MonoBehaviour
 {
     public Rigidbody CannonballPrefab;
-    public float fireDelay = 1f;
+    private float fireDelay;
     private bool canFire = true;
     private Vector3 posOnScreen;
     private Vector3 mousePos;
     private Vector3 cannonRot = new Vector3(90f, 0f, 0);
 
+    private void Start()
+    {
+        fireDelay = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().cannonFireDelay;
+    }
 
     // Update is called once per frame
     void Update()
