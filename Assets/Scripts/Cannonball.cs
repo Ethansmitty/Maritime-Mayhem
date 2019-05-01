@@ -11,8 +11,8 @@ public class Cannonball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        firingVelocity = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().cannonBallFiringVelocity;
-        damage = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().cannonBallDamage;
+        firingVelocity = Config.cannonBallFiringVelocity;
+        damage = Config.cannonBallDamage;
         rb = GetComponent<Rigidbody>();
         Vector3 forceDirection = this.transform.up * firingVelocity;
         rb.AddForce(forceDirection);

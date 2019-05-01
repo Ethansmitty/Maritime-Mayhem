@@ -14,18 +14,20 @@ public class Cannon : MonoBehaviour
 
     private void Start()
     {
-        fireDelay = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().cannonFireDelay;
+        fireDelay = Config.cannonFireDelay;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        posOnScreen = Camera.main.WorldToScreenPoint(transform.position); // Pos of cannon on screen
-        mousePos = Input.mousePosition; // Pos of mouse
+        if (!PauseListenerScript.Paused)
+        {
+            posOnScreen = Camera.main.WorldToScreenPoint(transform.position); // Pos of cannon on screen
+            mousePos = Input.mousePosition; // Pos of mouse
 
-        float angle = AngleBetweenTwoPoints(posOnScreen, mousePos);
-        cannonRot.z = (angle + 90);
-        transform.rotation = Quaternion.Euler(cannonRot);
+            float angle = AngleBetweenTwoPoints(posOnScreen, mousePos);
+            cannonRot.z = (angle + 90);
+            transform.rotation = Quaternion.Euler(cannonRot);
+        }
     }
 
     public void FireCannon()

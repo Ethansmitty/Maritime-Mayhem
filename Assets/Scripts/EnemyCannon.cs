@@ -13,7 +13,7 @@ public class EnemyCannon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fireRate = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().enemyFireRate;
+        fireRate = Config.enemyFireRate;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         InvokeRepeating("FireCannon", fireRate, fireRate);
     }
@@ -21,16 +21,17 @@ public class EnemyCannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target != null)
+        if (!PauseListenerScript.Paused)
         {
-            posOnScreen = Camera.main.WorldToScreenPoint(transform.position); // Pos of cannon on screen
-            targetPosOnScreen = Camera.main.WorldToScreenPoint(target.position); // Pos of target on screen
-            float angle = AngleBetweenTwoPoints(posOnScreen, targetPosOnScreen);
-            cannonRot.z = (angle + 90);
-            transform.rotation = Quaternion.Euler(cannonRot);
+            if (target != null)
+            {
+                posOnScreen = Camera.main.WorldToScreenPoint(transform.position); // Pos of cannon on screen
+                targetPosOnScreen = Camera.main.WorldToScreenPoint(target.position); // Pos of target on screen
+                float angle = AngleBetweenTwoPoints(posOnScreen, targetPosOnScreen);
+                cannonRot.z = (angle + 90);
+                transform.rotation = Quaternion.Euler(cannonRot);
+            }
         }
-
-
     }
 
     private void FireCannon()
@@ -38,7 +39,7 @@ public class EnemyCannon : MonoBehaviour
         Vector3 direction = target.position - transform.position;
         float magnitude = direction.magnitude;
 
-        if (magnitude <= GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().enemyFollowRange)
+        if (magnitude <= Config.enemyFollowRange)
         {
             Rigidbody cannonball = (Rigidbody)Instantiate(CannonballPrefab, transform.position, transform.rotation);
         }

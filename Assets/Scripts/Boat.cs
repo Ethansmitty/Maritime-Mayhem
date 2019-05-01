@@ -24,12 +24,12 @@ public class Boat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().playerHealth;
-        turnSpeed = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().playerTurnSpeed;
-        accelSpeed = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().playerAccelSpeed;
-        defaultDrag = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().playerDefaultDrag;
-        anchorDrag = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().playerAnchorDrag;
-        collisionDamage = GameObject.FindGameObjectWithTag("Config").GetComponent<Config>().playerCollisionDamage;
+        health = Config.playerHealth;
+        turnSpeed = Config.playerTurnSpeed;
+        accelSpeed = Config.playerAccelSpeed;
+        defaultDrag = Config.playerDefaultDrag;
+        anchorDrag = Config.playerAnchorDrag;
+        collisionDamage = Config.playerCollisionDamage;
 
         rb = GetComponent<Rigidbody>();
         anchor = GameObject.FindGameObjectWithTag("Anchor");
@@ -40,48 +40,53 @@ public class Boat : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) //Anchor the ship when Space is pressed
+        if (!PauseListenerScript.Paused)
         {
-            anchorPos = anchor.transform.position;
-
-            if (isAnchored)
+            if (Input.GetButtonDown("Anchor")) //Anchor the ship when Space is pressed
             {
-                isAnchored = false;
-                anchorPos.y += 15;
-                rb.drag = defaultDrag;
+                anchorPos = anchor.transform.position;
+
+                if (isAnchored)
+                {
+                    isAnchored = false;
+                    anchorPos.y += 15;
+                    rb.drag = defaultDrag;
+                }
+                else
+                {
+                    isAnchored = true;
+                    anchorPos.y -= 15;
+                    rb.drag = anchorDrag;
+                }
+                anchor.transform.position = anchorPos; //Move anchor sprite
             }
-            else
+
+            if (Input.GetMouseButtonDown(1))
             {
-                isAnchored = true;
-                anchorPos.y -= 15;
-                rb.drag = anchorDrag;
+                cannon.SendMessage("FireCannon");
             }
-            anchor.transform.position = anchorPos; //Move anchor sprite
-        }
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            cannon.SendMessage("FireCannon");
-        }
 
-        
-        healthText.text = string.Format("Health: {0}%", this.health);
-        if (health <=0)
-        {
-            Destroy(healthText.gameObject);
-            Destroy(this.gameObject);
+            healthText.text = string.Format("Health: {0}%", this.health);
+            if (health <= 0)
+            {
+                Destroy(healthText.gameObject);
+                Destroy(this.gameObject);
+            }
         }
-
     }
 
     void FixedUpdate()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        if (!PauseListenerScript.Paused)
+        {
+            float h = Input.GetAxis("Horizontal");
+            float v = Input.GetAxis("Vertical");
 
-        rb.AddTorque(0f, h * this.turnSpeed, 0f);
-        Vector3 speed = this.transform.up * (v * accelSpeed);
-        rb.AddForce(speed);
+            rb.AddTorque(0f, h * this.turnSpeed, 0f);
+            Vector3 speed = this.transform.up * (v * accelSpeed);
+            rb.AddForce(speed);
+        }
     }
 
     private void OnCBHit(int damage)
