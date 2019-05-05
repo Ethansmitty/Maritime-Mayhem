@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class Boat : MonoBehaviour
 {
-    private int health;
-    private float turnSpeed;
-    private float accelSpeed;
-    private float defaultDrag;
-    private float anchorDrag;
-    private int collisionDamage;
+    public int health = 100;
+    public float turnSpeed = 1f;
+    public float accelSpeed = 1f;
+    public float defaultDrag = 0.75f;
+    public float anchorDrag = 50f;
+    public int collisionDamage = 15;
 
     public TextMesh healthTextPrefab;
 
@@ -24,13 +24,6 @@ public class Boat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = Config.playerHealth;
-        turnSpeed = Config.playerTurnSpeed;
-        accelSpeed = Config.playerAccelSpeed;
-        defaultDrag = Config.playerDefaultDrag;
-        anchorDrag = Config.playerAnchorDrag;
-        collisionDamage = Config.playerCollisionDamage;
-
         rb = GetComponent<Rigidbody>();
         anchor = GameObject.FindGameObjectWithTag("Anchor");
         cannon = this.transform.GetChild(0).gameObject;
@@ -40,53 +33,48 @@ public class Boat : MonoBehaviour
 
     private void Update()
     {
-        if (!PauseListenerScript.Paused)
+        if (Input.GetKeyDown(KeyCode.Space)) //Anchor the ship when Space is pressed
         {
-            if (Input.GetButtonDown("Anchor")) //Anchor the ship when Space is pressed
+            anchorPos = anchor.transform.position;
+
+            if (isAnchored)
             {
-                anchorPos = anchor.transform.position;
-
-                if (isAnchored)
-                {
-                    isAnchored = false;
-                    anchorPos.y += 15;
-                    rb.drag = defaultDrag;
-                }
-                else
-                {
-                    isAnchored = true;
-                    anchorPos.y -= 15;
-                    rb.drag = anchorDrag;
-                }
-                anchor.transform.position = anchorPos; //Move anchor sprite
+                isAnchored = false;
+                anchorPos.y += 15;
+                rb.drag = defaultDrag;
             }
-
-            if (Input.GetMouseButtonDown(1))
+            else
             {
-                cannon.SendMessage("FireCannon");
+                isAnchored = true;
+                anchorPos.y -= 15;
+                rb.drag = anchorDrag;
             }
-
-
-            healthText.text = string.Format("Health: {0}%", this.health);
-            if (health <= 0)
-            {
-                Destroy(healthText.gameObject);
-                Destroy(this.gameObject);
-            }
+            anchor.transform.position = anchorPos; //Move anchor sprite
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            cannon.SendMessage("FireCannon");
+        }
+
+        
+        healthText.text = string.Format("Health: {0}%", health);
+        if (health <=0)
+        {
+            Destroy(healthText.gameObject);
+            Destroy(this.gameObject);
+        }
+
     }
 
     void FixedUpdate()
     {
-        if (!PauseListenerScript.Paused)
-        {
-            float h = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
 
-            rb.AddTorque(0f, h * this.turnSpeed, 0f);
-            Vector3 speed = this.transform.up * (v * accelSpeed);
-            rb.AddForce(speed);
-        }
+        rb.AddTorque(0f, h * turnSpeed, 0f);
+        Vector3 speed = this.transform.up * (v * accelSpeed);
+        rb.AddForce(speed);
     }
 
     private void OnCBHit(int damage)
@@ -101,5 +89,4 @@ public class Boat : MonoBehaviour
             this.health -= collisionDamage;
         }
     }
-
 }

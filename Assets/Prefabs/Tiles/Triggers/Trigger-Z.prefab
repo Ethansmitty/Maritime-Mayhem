@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3133856449761745025}
   - component: {fileID: 3133856449761745054}
   - component: {fileID: 3133856449761745055}
-  - component: {fileID: 8689405588559491215}
+  - component: {fileID: 8928312214424593238}
   m_Layer: 12
   m_Name: Trigger-Z
   m_TagString: Trigger
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3133856449761745053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 17.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -92,7 +92,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8689405588559491215
+--- !u!114 &8928312214424593238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,5 +108,11 @@ MonoBehaviour:
   weightTotal: 0
   TileWithTriggers: {fileID: 1582692094985108963, guid: 703c34d4b85ce0d46b8a1ee09165c297,
     type: 3}
-  EnemyBoat: {fileID: 6611182094370535247, guid: 2e410313254047f4c99043caecdb0d3d,
+  EnemyBoat: {fileID: 5833640055335274283, guid: bc982588a792c154b9d4575fa0b7f06a,
+    type: 3}
+  island: {fileID: 9213575131063455420, guid: fe7296ea8e2054744a509890283e16ec, type: 3}
+  whirlpool: {fileID: 2605050900475607103, guid: cbcc9b797a5c8284d82972b768126e2a,
+    type: 3}
+  rocks: {fileID: 2392423726320096323, guid: feb390fc6be64d04fb89055c3074c511, type: 3}
+  sunkenboat: {fileID: 306418343309667777, guid: a381c1a54abcef749ab73f1352cefcc2,
     type: 3}

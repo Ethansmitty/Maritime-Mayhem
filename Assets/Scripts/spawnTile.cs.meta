@@ -8,6 +8,12 @@ MonoImporter:
       type: 3}
   - EnemyBoat: {fileID: 6611182094370535247, guid: 2e410313254047f4c99043caecdb0d3d,
       type: 3}
+  - island: {fileID: 574468354350627336, guid: 4c80ad70555ffe5408d0c8f7ada664f6, type: 3}
+  - whirlpool: {fileID: 8728713685353710587, guid: 54c24c9ff9cbfe34db5e0cf45923537f,
+      type: 3}
+  - rocks: {fileID: 3927696790833992737, guid: c3f48ac5cdca4f945a6aceafc12dafa5, type: 3}
+  - sunkenboat: {fileID: 2663973920607806300, guid: c5643ded192f2dd4cbc38499f3148b6e,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

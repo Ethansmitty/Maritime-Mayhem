@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Cannonball : MonoBehaviour
 {
-    private float firingVelocity;
-    private int damage;
+    public float firingVelocity = 1f;
+    public int damage = 10;
     private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        firingVelocity = Config.cannonBallFiringVelocity;
-        damage = Config.cannonBallDamage;
         rb = GetComponent<Rigidbody>();
         Vector3 forceDirection = this.transform.up * firingVelocity;
         rb.AddForce(forceDirection);
