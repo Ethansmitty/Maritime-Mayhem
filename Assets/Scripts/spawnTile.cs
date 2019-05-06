@@ -8,18 +8,30 @@ public class spawnTile : MonoBehaviour {
     public int weightTotal;
 	public GameObject TileWithTriggers;
 	public GameObject EnemyBoat;
+	public GameObject island;
+	public GameObject whirlpool;
+	public GameObject rocks;
+	public GameObject sunkenboat;
     public static List<GameObject> decorations = new List<GameObject>();
 	
 	void Start(){
 		
 		decorations.Add(null);
 		decorations.Add(EnemyBoat);
+		decorations.Add(island);
+		decorations.Add(whirlpool);
+		decorations.Add(rocks);
+		decorations.Add(sunkenboat);
 		
 		weights = new int[decorations.Count + 1]; //number of things
  
         //weighting of each thing, high number means more occurrance
 		weights[0] = 100;
 		weights[1] = 25;
+		weights[2] = 20;
+		weights[3] = 15;
+		weights[4] = 10;
+		weights[5] = 5;
  
         weightTotal = 0;
         foreach ( int w in weights ) {
@@ -66,27 +78,35 @@ public class spawnTile : MonoBehaviour {
 		newPos.x -= adjust;
 		newPos.z += adjust;
 		if (CheckForTile(newPos)){
-			GameObject newTile1 = Instantiate<GameObject>(TileWithTriggers);
+			
 			int ranVar = RandomWeighted();
+			Debug.Log(ranVar);
 			if(decorations[ranVar] != null){
 				GameObject decoration = Instantiate<GameObject>(decorations[ranVar]);
 				decoration.transform.position = newPos;
 			}
-            newTile1.transform.position = newPos;
+			else {
+				GameObject newTile1 = Instantiate<GameObject>(TileWithTriggers);
+				newTile1.transform.position = newPos;
+			}
+            
 		}
 		newPos = originPos;
 		
 		
 		//new top center
 		newPos.z += adjust;
+		newPos.y = 0f;
 		if (CheckForTile(newPos)){
-			GameObject newTile2 = Instantiate<GameObject>(TileWithTriggers);
             int ranVar = RandomWeighted();
 			if(decorations[ranVar] != null){
-				GameObject decoration = Instantiate<GameObject>(decorations[ranVar]);
-				decoration.transform.position = newPos;
+				GameObject decoration2 = Instantiate<GameObject>(decorations[ranVar]);
+				decoration2.transform.position = newPos;
 			}
-            newTile2.transform.position = newPos;
+			else {
+				GameObject newTile2 = Instantiate<GameObject>(TileWithTriggers);
+				newTile2.transform.position = newPos;
+			}
 		}
 		newPos = originPos;
 		
@@ -94,39 +114,45 @@ public class spawnTile : MonoBehaviour {
 		newPos.x += adjust;
 		newPos.z += adjust;
 		if (CheckForTile(newPos)){
-			GameObject newTile3 = Instantiate<GameObject>(TileWithTriggers);
             int ranVar = RandomWeighted();
 			if(decorations[ranVar] != null){
-				GameObject decoration = Instantiate<GameObject>(decorations[ranVar]);
-				decoration.transform.position = newPos;
+				GameObject decoration3 = Instantiate<GameObject>(decorations[ranVar]);
+				decoration3.transform.position = newPos;
 			}
-            newTile3.transform.position = newPos;
+			else {
+				GameObject newTile3 = Instantiate<GameObject>(TileWithTriggers);
+				newTile3.transform.position = newPos;
+			}
 		}
 		newPos = originPos;
 		
 		//new middle left
 		newPos.x -= adjust;
 		if (CheckForTile(newPos)){
-			GameObject newTile4 = Instantiate<GameObject>(TileWithTriggers);
             int ranVar = RandomWeighted();
 			if(decorations[ranVar] != null){
-				GameObject decoration = Instantiate<GameObject>(decorations[ranVar]);
-				decoration.transform.position = newPos;
+				GameObject decoration4 = Instantiate<GameObject>(decorations[ranVar]);
+				decoration4.transform.position = newPos;
 			}
-            newTile4.transform.position = newPos;
+			else {
+				GameObject newTile4 = Instantiate<GameObject>(TileWithTriggers);
+				newTile4.transform.position = newPos;
+			}
 		}
 		newPos = originPos;
 		
 		//new middle right
 		newPos.x += adjust;
 		if (CheckForTile(newPos)){
-			GameObject newTile5 = Instantiate<GameObject>(TileWithTriggers);
             int ranVar = RandomWeighted();
 			if(decorations[ranVar] != null){
-				GameObject decoration = Instantiate<GameObject>(decorations[ranVar]);
-				decoration.transform.position = newPos;
+				GameObject decoration5 = Instantiate<GameObject>(decorations[ranVar]);
+				decoration5.transform.position = newPos;
 			}
-            newTile5.transform.position = newPos;
+			else {
+				GameObject newTile5 = Instantiate<GameObject>(TileWithTriggers);
+				newTile5.transform.position = newPos;
+			}
 		}
 		newPos = originPos;
 		
@@ -135,26 +161,30 @@ public class spawnTile : MonoBehaviour {
 		newPos.x -= adjust;
 		newPos.z -= adjust;
 		if (CheckForTile(newPos)){
-			GameObject newTile6 = Instantiate<GameObject>(TileWithTriggers);
             int ranVar = RandomWeighted();
 			if(decorations[ranVar] != null){
-				GameObject decoration = Instantiate<GameObject>(decorations[ranVar]);
-				decoration.transform.position = newPos;
+				GameObject decoration6 = Instantiate<GameObject>(decorations[ranVar]);
+				decoration6.transform.position = newPos;
 			}
-            newTile6.transform.position = newPos;
+			else {
+				GameObject newTile6 = Instantiate<GameObject>(TileWithTriggers);
+				newTile6.transform.position = newPos;
+			}
 		}
 		newPos = originPos;
 		
 		//new bottom middle
 		newPos.z -= adjust;
 		if (CheckForTile(newPos)){
-			GameObject newTile7 = Instantiate<GameObject>(TileWithTriggers);
 			int ranVar = RandomWeighted();
             if(decorations[ranVar] != null){
-				GameObject decoration = Instantiate<GameObject>(decorations[ranVar]);
-				decoration.transform.position = newPos;
+				GameObject decoration7 = Instantiate<GameObject>(decorations[ranVar]);
+				decoration7.transform.position = newPos;
 			}
-            newTile7.transform.position = newPos;
+			else {
+				GameObject newTile7 = Instantiate<GameObject>(TileWithTriggers);
+				newTile7.transform.position = newPos;
+			}
 		}
 		newPos = originPos;
 		
@@ -162,13 +192,15 @@ public class spawnTile : MonoBehaviour {
 		newPos.x += adjust;
 		newPos.z -= adjust;
 		if (CheckForTile(newPos)){
-			GameObject newTile8 = Instantiate<GameObject>(TileWithTriggers);
             int ranVar = RandomWeighted();
             if(decorations[ranVar] != null){
-				GameObject decoration = Instantiate<GameObject>(decorations[ranVar]);
-				decoration.transform.position = newPos;
+				GameObject decoration8 = Instantiate<GameObject>(decorations[ranVar]);
+				decoration8.transform.position = newPos;
 			}
-			newTile8.transform.position = newPos;
+			else {
+				GameObject newTile8 = Instantiate<GameObject>(TileWithTriggers);
+				newTile8.transform.position = newPos;
+			}
 		}
 		newPos = originPos;
 		

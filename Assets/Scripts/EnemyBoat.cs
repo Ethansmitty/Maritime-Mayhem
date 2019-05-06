@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyBoat : MonoBehaviour
 {
-    private int health;
-    private float accelSpeed;
-    private float followRange;
-    private float minDistanceToPlayer;
-    private int collisionDamage;
+    public int health = 100;
+    public float accelSpeed = 1f;
+    public float followRange = 10f;
+    public float minDistanceToPlayer = 1f;
+    public int collisionDamage = 15;
     public TextMesh healthTextPrefab;
 
     private TextMesh healthText;
@@ -19,12 +19,6 @@ public class EnemyBoat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = Config.enemyHealth;
-        accelSpeed = Config.enemyAccelSpeed;
-        followRange = Config.enemyFollowRange;
-        minDistanceToPlayer = Config.enemyMinDistanceToPlayer;
-        collisionDamage = Config.enemyCollisionDamage;
-
         target = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody>();
 
@@ -34,42 +28,36 @@ public class EnemyBoat : MonoBehaviour
 
     void Update()
     {
-        if (!PauseListenerScript.Paused)
-        {
-            this.transform.rotation = this.gameObject.transform.GetChild(0).transform.rotation;
+        this.transform.rotation = this.gameObject.transform.GetChild(0).transform.rotation;
 
-            healthText.text = string.Format("Health: {0}%", health);
-            if (health <= 0)
-            {
-                Destroy(healthText.gameObject);
-                Destroy(this.gameObject);
-            }
+        healthText.text = string.Format("Health: {0}%", health);
+        if (health <= 0)
+        {
+            Destroy(healthText.gameObject);
+            Destroy(this.gameObject);
         }
     }
 
     void FixedUpdate()
     {
-        if (!PauseListenerScript.Paused)
+        if (target != null)
         {
-            if (target != null)
+            //Calculate player's position
+            Vector3 direction = target.position - transform.position;
+            float magnitude = direction.magnitude;
+            direction.Normalize();
+
+            //Calculate enemy's speed
+            Vector3 velocity = direction * accelSpeed;
+
+            if (magnitude > (minDistanceToPlayer + 0.5) && magnitude < followRange)
             {
-                //Calculate player's position
-                Vector3 direction = target.position - transform.position;
-                float magnitude = direction.magnitude;
-                direction.Normalize();
-
-                //Calculate enemy's speed
-                Vector3 velocity = direction * accelSpeed;
-
-                if (magnitude > (minDistanceToPlayer + 0.5) && magnitude < followRange)
-                {
-                    //Move the enemy
-                    rb.AddForce(new Vector3(velocity.x, rb.velocity.y, velocity.z));
-                }
-                else if (magnitude < minDistanceToPlayer)
-                {
-                    rb.AddForce(new Vector3(-velocity.x, rb.velocity.y, -velocity.z));
-                }
+                //Move the enemy
+                rb.AddForce(new Vector3(velocity.x, rb.velocity.y, velocity.z));
+            }
+            else if (magnitude < minDistanceToPlayer)
+            {
+                rb.AddForce(new Vector3(-velocity.x, rb.velocity.y, -velocity.z));
             }
         }
     }

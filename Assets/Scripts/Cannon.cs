@@ -6,28 +6,22 @@ using UnityEngine;
 public class Cannon : MonoBehaviour
 {
     public Rigidbody CannonballPrefab;
-    private float fireDelay;
+    public float fireDelay = 1f;
     private bool canFire = true;
     private Vector3 posOnScreen;
     private Vector3 mousePos;
     private Vector3 cannonRot = new Vector3(90f, 0f, 0);
 
-    private void Start()
-    {
-        fireDelay = Config.cannonFireDelay;
-    }
 
+    // Update is called once per frame
     void Update()
     {
-        if (!PauseListenerScript.Paused)
-        {
-            posOnScreen = Camera.main.WorldToScreenPoint(transform.position); // Pos of cannon on screen
-            mousePos = Input.mousePosition; // Pos of mouse
+        posOnScreen = Camera.main.WorldToScreenPoint(transform.position); // Pos of cannon on screen
+        mousePos = Input.mousePosition; // Pos of mouse
 
-            float angle = AngleBetweenTwoPoints(posOnScreen, mousePos);
-            cannonRot.z = (angle + 90);
-            transform.rotation = Quaternion.Euler(cannonRot);
-        }
+        float angle = AngleBetweenTwoPoints(posOnScreen, mousePos);
+        cannonRot.z = (angle + 90);
+        transform.rotation = Quaternion.Euler(cannonRot);
     }
 
     public void FireCannon()

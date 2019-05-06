@@ -118,7 +118,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1582692094985108963, guid: 9061985af4870b1479e89fc7b1084eba,
         type: 3}
-    - target: {fileID: 6128845087137063695, guid: 01ba36b41d98453408d71ec99f44b05e,
+    - target: {fileID: 6418123560179178586, guid: 01ba36b41d98453408d71ec99f44b05e,
         type: 3}
       propertyPath: TileWithTriggers
       value: 
@@ -138,6 +138,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9163148860767857319}
     m_Modifications:
+    - target: {fileID: 3133856449761745053, guid: 2caa206137fd2184a9d2189f8fa5ea57,
+        type: 3}
+      propertyPath: m_Name
+      value: Trigger-Z
+      objectReference: {fileID: 0}
+    - target: {fileID: 3133856449761745053, guid: 2caa206137fd2184a9d2189f8fa5ea57,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3133856449761745024, guid: 2caa206137fd2184a9d2189f8fa5ea57,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -198,23 +208,13 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 17.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3133856449761745053, guid: 2caa206137fd2184a9d2189f8fa5ea57,
-        type: 3}
-      propertyPath: m_Name
-      value: Trigger-Z
-      objectReference: {fileID: 0}
-    - target: {fileID: 3133856449761745053, guid: 2caa206137fd2184a9d2189f8fa5ea57,
-        type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 3133856449761745027, guid: 2caa206137fd2184a9d2189f8fa5ea57,
         type: 3}
       propertyPath: TileWithTriggers
       value: 
       objectReference: {fileID: 1582692094985108963, guid: 9061985af4870b1479e89fc7b1084eba,
         type: 3}
-    - target: {fileID: 8689405588559491215, guid: 2caa206137fd2184a9d2189f8fa5ea57,
+    - target: {fileID: 8928312214424593238, guid: 2caa206137fd2184a9d2189f8fa5ea57,
         type: 3}
       propertyPath: TileWithTriggers
       value: 
@@ -310,7 +310,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1582692094985108963, guid: 9061985af4870b1479e89fc7b1084eba,
         type: 3}
-    - target: {fileID: 5400592188131731157, guid: 25c42a94af440974b8aa976148ecf535,
+    - target: {fileID: 3395196711296531100, guid: 25c42a94af440974b8aa976148ecf535,
         type: 3}
       propertyPath: TileWithTriggers
       value: 
@@ -330,6 +330,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9163148860767857319}
     m_Modifications:
+    - target: {fileID: 7141409702061246342, guid: e394c29fe4785fb40992541050d42730,
+        type: 3}
+      propertyPath: m_Name
+      value: Tile
+      objectReference: {fileID: 0}
     - target: {fileID: 7719678378908556992, guid: e394c29fe4785fb40992541050d42730,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -385,11 +390,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7141409702061246342, guid: e394c29fe4785fb40992541050d42730,
-        type: 3}
-      propertyPath: m_Name
-      value: Tile
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e394c29fe4785fb40992541050d42730, type: 3}
 --- !u!4 &4023278741343792293 stripped
@@ -405,6 +405,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9163148860767857319}
     m_Modifications:
+    - target: {fileID: 7608761323699812102, guid: 9406cb6792958c642b412bf60169744d,
+        type: 3}
+      propertyPath: m_Name
+      value: Trigger+X
+      objectReference: {fileID: 0}
+    - target: {fileID: 7608761323699812102, guid: 9406cb6792958c642b412bf60169744d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 7608761323699812122, guid: 9406cb6792958c642b412bf60169744d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -465,23 +475,13 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 17.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7608761323699812102, guid: 9406cb6792958c642b412bf60169744d,
-        type: 3}
-      propertyPath: m_Name
-      value: Trigger+X
-      objectReference: {fileID: 0}
-    - target: {fileID: 7608761323699812102, guid: 9406cb6792958c642b412bf60169744d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 7608761323699812123, guid: 9406cb6792958c642b412bf60169744d,
         type: 3}
       propertyPath: TileWithTriggers
       value: 
       objectReference: {fileID: 1582692094985108963, guid: 9061985af4870b1479e89fc7b1084eba,
         type: 3}
-    - target: {fileID: 6606390949513899555, guid: 9406cb6792958c642b412bf60169744d,
+    - target: {fileID: 5508799211571796500, guid: 9406cb6792958c642b412bf60169744d,
         type: 3}
       propertyPath: TileWithTriggers
       value: 
