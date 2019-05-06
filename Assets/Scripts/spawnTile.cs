@@ -52,22 +52,8 @@ public class spawnTile : MonoBehaviour {
 	void OnTriggerEnter (Collider other){
 		Destroy(this);
 		
-		Vector3 originPos = this.transform.position;
-		
 		//adjust origin pos to be center of tile, not trigger position
-		if(originPos.x > 0){
-			originPos.x -= 8.75f;
-		}
-		if(originPos.x < 0){
-			originPos.x += 8.75f;
-		}
-		if(originPos.z > 0){
-			originPos.z -= 8.75f;
-		}
-		if(originPos.z < 0){
-			originPos.z += 8.75f;
-		}
-		
+		Vector3 originPos = this.transform.parent.position;
 		Vector3 newPos = originPos;
 		newPos.y = 0f;
 		
@@ -96,7 +82,6 @@ public class spawnTile : MonoBehaviour {
 		
 		//new top center
 		newPos.z += adjust;
-		newPos.y = 0f;
 		if (CheckForTile(newPos)){
             int ranVar = RandomWeighted();
 			if(decorations[ranVar] != null){
