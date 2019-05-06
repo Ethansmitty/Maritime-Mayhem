@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7245850118675812301}
   - component: {fileID: 6730172634943202074}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: islandtree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2587894615813085026}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: islandParent
   m_TagString: Tile
   m_Icon: {fileID: 0}

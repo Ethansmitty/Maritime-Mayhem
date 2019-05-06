@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2558190878965598710}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: sunkBoatParent
   m_TagString: Tile
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8181078332687505641}
   - component: {fileID: 4115104833710135166}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: sunkenboat
   m_TagString: Untagged
   m_Icon: {fileID: 0}

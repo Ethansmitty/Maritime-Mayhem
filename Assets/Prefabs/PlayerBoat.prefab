@@ -92,9 +92,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61a57b85197bd74c88e501db802b072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Config: {fileID: 4568340005732736446, guid: b724bbe6e83818e4dba37305729743d8, type: 3}
   CannonballPrefab: {fileID: 2072583849724966084, guid: 6b9a5913bb8d0154daf3533545a38149,
     type: 3}
-  fireDelay: 1
 --- !u!1 &3516501518592096796
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,13 +190,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97cf1ae6cfa8037438437c016a00782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  turnSpeed: 1.5
-  accelSpeed: 15
-  defaultDrag: 0.75
-  anchorDrag: 50
-  collisionDamage: 15
-  healthTextPrefab: {fileID: 0}
+  Config: {fileID: 4568340005732736446, guid: b724bbe6e83818e4dba37305729743d8, type: 3}
+  healthTextPrefab: {fileID: 4659470167885921237, guid: d9e2d2ce89818b64780f253c5de11b54,
+    type: 3}
 --- !u!54 &3516501518592096794
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -211,7 +207,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 52
   m_CollisionDetection: 0
 --- !u!65 &3516501518592096791
 BoxCollider:

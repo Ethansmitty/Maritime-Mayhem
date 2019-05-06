@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6611182094370535242}
   - component: {fileID: 6611182094370535243}
   - component: {fileID: 6611182094370535252}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: EnemyBoat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,11 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a84a57820bba01439d7efd9f7741d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  accelSpeed: 10
-  followRange: 10
-  minDistanceToPlayer: 1.5
-  collisionDamage: 15
+  Config: {fileID: 4568340005732736446, guid: b724bbe6e83818e4dba37305729743d8, type: 3}
   healthTextPrefab: {fileID: 4659470167885921237, guid: d9e2d2ce89818b64780f253c5de11b54,
     type: 3}
 --- !u!54 &6611182094370535243
@@ -116,7 +112,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!65 &6611182094370535252
 BoxCollider:
@@ -142,7 +138,7 @@ GameObject:
   - component: {fileID: 6611182094597222398}
   - component: {fileID: 6611182094597222399}
   - component: {fileID: 6611182094597222392}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EnemyCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,6 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 494bc71b1fc338d4fb43d7c8b5b96a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CannonballPrefab: {fileID: 2072583849724966084, guid: 6b9a5913bb8d0154daf3533545a38149,
+  Config: {fileID: 4568340005732736446, guid: b724bbe6e83818e4dba37305729743d8, type: 3}
+  CannonballPrefab: {fileID: 2072583849724966084, guid: c90949b3c9a76104a8430afd396492e8,
     type: 3}
-  fireRate: 2

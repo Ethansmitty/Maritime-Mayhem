@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 565183220148118635}
   - component: {fileID: 4766323989951432050}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: whirlpool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1996603616021716531}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: WhirlpoolParent
   m_TagString: Tile
   m_Icon: {fileID: 0}

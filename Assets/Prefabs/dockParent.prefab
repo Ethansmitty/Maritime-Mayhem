@@ -24,7 +24,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 255278936743583560}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: dockParent
   m_TagString: Tile
   m_Icon: {fileID: 0}
