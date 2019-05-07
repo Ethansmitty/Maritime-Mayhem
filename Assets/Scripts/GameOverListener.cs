@@ -7,12 +7,15 @@ using UnityEngine.UI;
 public class GameOverListener : MonoBehaviour
 {
     public Text GameOverText;
-    public GameObject Player;
+    public Text PointsText;
+    public Text GoldText;
+    public Boat Player;
 
-
-    void LateUpdate()
+    void Update()
     {
-        if (Player == null)
+        PointsText.text = string.Format("Points: {0}", Player.points);
+        GoldText.text = string.Format("Gold: {0}", Player.gold);
+        if (Player.health <= 0)
         {
             GameOverText.enabled = true;
             if (Input.anyKeyDown)

@@ -11,12 +11,15 @@ public class Config : MonoBehaviour
 
     public float enemyFireRate = 2.0f;
 
+    public int enemyGoldMin = 1;
+    public int enemyGoldMax = 25;
     public int enemyHealth = 100;
     public float enemyAccelSpeed = 30f;
     public float enemyFollowRange = 15f;
     public float enemyMinDistanceToPlayer = 2f;
     public int enemyCollisionDamage = 15;
 
+    public float playerAnchorTurnSpeed = 8f;
     public int playerHealth = 100;
     public float playerTurnSpeed = 7f;
     public float playerAccelSpeed = 50f;
