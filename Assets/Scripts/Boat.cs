@@ -7,7 +7,10 @@ public class Boat : MonoBehaviour
 {
     public Config Config;
 
-    private int health;
+    public int gold;
+    public int points;
+    public int health;
+
     private float turnSpeed;
     private float accelSpeed;
     private float defaultDrag;
@@ -16,7 +19,6 @@ public class Boat : MonoBehaviour
     private float anchorTurnSpeed;
 
     public TextMesh healthTextPrefab;
-
     private TextMesh healthText;
     private bool isAnchored = false;
     private Rigidbody rb;
@@ -27,6 +29,9 @@ public class Boat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        points = 0;
+        gold = 0;
+
         health = Config.playerHealth;
         turnSpeed = Config.playerTurnSpeed;
         accelSpeed = Config.playerAccelSpeed;
