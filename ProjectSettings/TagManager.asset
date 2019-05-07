@@ -10,6 +10,7 @@ TagManager:
   - Trigger
   - Tile
   - Config
+  - MiniMap
   layers:
   - Default
   - TransparentFX

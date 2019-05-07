@@ -26,4 +26,10 @@ public class Cannonball : MonoBehaviour
         col.gameObject.SendMessage("OnCBHit", damage);
         Destroy(this.gameObject);
     }
+
+    private void AddVelocity(Vector3 newVelocity)
+    {
+        rb = GetComponent<Rigidbody>();
+        this.rb.AddForce(-(newVelocity * firingVelocity));
+    }
 }

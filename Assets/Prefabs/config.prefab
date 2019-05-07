@@ -43,3 +43,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520ac3955e7d59b459908657059afc24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cannonBallFiringVelocity: 400
+  cannonBallDamage: 10
+  cannonFireDelay: 1
+  enemyFireRate: 2
+  enemyHealth: 100
+  enemyAccelSpeed: 25
+  enemyFollowRange: 15
+  enemyMinDistanceToPlayer: 2
+  enemyCollisionDamage: 15
+  playerHealth: 100
+  playerTurnSpeed: 3
+  playerAccelSpeed: 30
+  playerDefaultDrag: 0.75
+  playerAnchorDrag: 50
+  playerAnchorTurnSpeed: 8
+  playerCollisionDamage: 1

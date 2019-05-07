@@ -40,9 +40,13 @@ public class EnemyBoat : MonoBehaviour
         {
             this.transform.rotation = this.gameObject.transform.GetChild(0).transform.rotation;
 
-            healthText.text = string.Format("Health: {0}%", health);
+            if (healthText != null)
+            {
+                healthText.text = string.Format("Health: {0}%", health);
+            }
             if (health <= 0)
             {
+                GameObject.FindGameObjectWithTag("MainCamera").SendMessage("AddPoints", 1);
                 Destroy(healthText.gameObject);
                 Destroy(this.gameObject);
             }

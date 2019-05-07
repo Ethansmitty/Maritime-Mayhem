@@ -22,5 +22,6 @@ public class Config : MonoBehaviour
     public float playerAccelSpeed = 50f;
     public float playerDefaultDrag = 0.75f;
     public float playerAnchorDrag = 50f;
+    public float playerAnchorTurnSpeed = 8f;
     public int playerCollisionDamage = 1;
 }

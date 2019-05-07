@@ -13,6 +13,7 @@ public class Boat : MonoBehaviour
     private float defaultDrag;
     private float anchorDrag;
     private int collisionDamage;
+    private float anchorTurnSpeed;
 
     public TextMesh healthTextPrefab;
 
@@ -32,6 +33,7 @@ public class Boat : MonoBehaviour
         defaultDrag = Config.playerDefaultDrag;
         anchorDrag = Config.playerAnchorDrag;
         collisionDamage = Config.playerCollisionDamage;
+        anchorTurnSpeed = Config.playerAnchorTurnSpeed;
 
         rb = GetComponent<Rigidbody>();
         anchor = GameObject.FindGameObjectWithTag("Anchor");
@@ -85,7 +87,13 @@ public class Boat : MonoBehaviour
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
 
-            rb.AddTorque(0f, h * this.turnSpeed, 0f);
+            if (this.isAnchored)
+            {
+                rb.AddTorque(0f, h * this.anchorTurnSpeed, 0f);
+            } else
+            {
+                rb.AddTorque(0f, h * this.turnSpeed, 0f);
+            }
             Vector3 speed = this.transform.up * (v * accelSpeed);
             rb.AddForce(speed);
         }
@@ -103,5 +111,4 @@ public class Boat : MonoBehaviour
             this.health -= collisionDamage;
         }
     }
-
 }
