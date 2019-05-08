@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4568340005732736417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4568340005732736447}
+  - component: {fileID: 4568340005732736446}
+  m_Layer: 0
+  m_Name: config
+  m_TagString: Config
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4568340005732736447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4568340005732736417}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4568340005732736446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4568340005732736417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520ac3955e7d59b459908657059afc24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cannonBallFiringVelocity: 300
+  cannonBallDamage: 10
+  cannonFireDelay: 1
+  enemyFireRate: 2
+  enemyGoldMin: 1
+  enemyGoldMax: 25
+  enemyHealth: 100
+  enemyAccelSpeed: 30
+  enemyFollowRange: 15
+  enemyMinDistanceToPlayer: 2
+  enemyCollisionDamage: 15
+  playerAnchorTurnSpeed: 8
+  playerHealth: 100
+  playerTurnSpeed: 3
+  playerAccelSpeed: 50
+  playerDefaultDrag: 0.75
+  playerAnchorDrag: 50
+  playerCollisionDamage: 1
