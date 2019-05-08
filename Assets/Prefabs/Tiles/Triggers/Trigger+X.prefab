@@ -110,9 +110,9 @@ MonoBehaviour:
     type: 3}
   EnemyBoat: {fileID: 5833640055335274283, guid: bc982588a792c154b9d4575fa0b7f06a,
     type: 3}
-  island: {fileID: 9213575131063455420, guid: fe7296ea8e2054744a509890283e16ec, type: 3}
+  island: {fileID: 4159451105143035412, guid: 07ba21b315681ed4ca9b145aaa49666c, type: 3}
   whirlpool: {fileID: 2605050900475607103, guid: cbcc9b797a5c8284d82972b768126e2a,
     type: 3}
-  rocks: {fileID: 2392423726320096323, guid: feb390fc6be64d04fb89055c3074c511, type: 3}
-  sunkenboat: {fileID: 306418343309667777, guid: a381c1a54abcef749ab73f1352cefcc2,
+  rocks: {fileID: 1184546553300876605, guid: 74b93e5e61b2e264bb4c8b91bb56193f, type: 3}
+  sunkenboat: {fileID: 2211805265408070383, guid: 8d569eb6e642b74499f4e5aaf83ca35b,
     type: 3}
