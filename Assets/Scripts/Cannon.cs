@@ -37,8 +37,6 @@ public class Cannon : MonoBehaviour
         if (canFire)
         {
             Rigidbody cannonball = (Rigidbody)Instantiate(CannonballPrefab, transform.position, transform.rotation);
-            Vector3 velocity = this.GetComponentInParent<Rigidbody>().velocity.normalized;
-            cannonball.SendMessage("AddVelocity", velocity);
             canFire = false;
             Invoke("ResetCannonTimer", fireDelay);
         }

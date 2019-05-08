@@ -66,7 +66,7 @@ public class spawnTile : MonoBehaviour {
 		if (CheckForTile(newPos)){
 			
 			int ranVar = RandomWeighted();
-			Debug.Log(ranVar);
+			//Debug.Log(ranVar);
 			if(decorations[ranVar] != null){
 				GameObject decoration = Instantiate<GameObject>(decorations[ranVar]);
 				decoration.transform.position = newPos;

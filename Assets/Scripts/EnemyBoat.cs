@@ -12,7 +12,6 @@ public class EnemyBoat : MonoBehaviour
     private float minDistanceToPlayer;
     private int collisionDamage;
     public TextMesh healthTextPrefab;
-    public GameObject lootObject;
 
     private TextMesh healthText;
     private Rigidbody rb;
@@ -41,14 +40,9 @@ public class EnemyBoat : MonoBehaviour
         {
             this.transform.rotation = this.gameObject.transform.GetChild(0).transform.rotation;
 
-            if (healthText != null)
-            {
-                healthText.text = string.Format("Health: {0}%", health);
-            }
+            healthText.text = string.Format("Health: {0}%", health);
             if (health <= 0)
             {
-                target.GetComponent<Boat>().points++;
-                Instantiate(lootObject, this.transform.position, this.transform.rotation);
                 Destroy(healthText.gameObject);
                 Destroy(this.gameObject);
             }

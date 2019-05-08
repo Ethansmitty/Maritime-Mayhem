@@ -7,18 +7,15 @@ public class Boat : MonoBehaviour
 {
     public Config Config;
 
-    public int gold;
-    public int points;
-    public int health;
-
+    private int health;
     private float turnSpeed;
     private float accelSpeed;
     private float defaultDrag;
     private float anchorDrag;
     private int collisionDamage;
-    private float anchorTurnSpeed;
 
     public TextMesh healthTextPrefab;
+
     private TextMesh healthText;
     private bool isAnchored = false;
     private Rigidbody rb;
@@ -29,16 +26,12 @@ public class Boat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        points = 0;
-        gold = 0;
-
         health = Config.playerHealth;
         turnSpeed = Config.playerTurnSpeed;
         accelSpeed = Config.playerAccelSpeed;
         defaultDrag = Config.playerDefaultDrag;
         anchorDrag = Config.playerAnchorDrag;
         collisionDamage = Config.playerCollisionDamage;
-        anchorTurnSpeed = Config.playerAnchorTurnSpeed;
 
         rb = GetComponent<Rigidbody>();
         anchor = GameObject.FindGameObjectWithTag("Anchor");
@@ -92,13 +85,7 @@ public class Boat : MonoBehaviour
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
 
-            if (this.isAnchored)
-            {
-                rb.AddTorque(0f, h * this.anchorTurnSpeed, 0f);
-            } else
-            {
-                rb.AddTorque(0f, h * this.turnSpeed, 0f);
-            }
+            rb.AddTorque(0f, h * this.turnSpeed, 0f);
             Vector3 speed = this.transform.up * (v * accelSpeed);
             rb.AddForce(speed);
         }
@@ -115,5 +102,12 @@ public class Boat : MonoBehaviour
         {
             this.health -= collisionDamage;
         }
+		
+		if (col.gameObject.CompareTag("Whirlpool")){
+			Debug.Log("Enter whirlpool");
+			this.rb.drag = 20f;
+		}
     }
+	
+
 }

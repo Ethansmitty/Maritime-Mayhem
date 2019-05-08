@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6611182094370535252}
   m_Layer: 11
   m_Name: EnemyBoat
-  m_TagString: Boat
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,8 +97,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Config: {fileID: 4568340005732736446, guid: b724bbe6e83818e4dba37305729743d8, type: 3}
   healthTextPrefab: {fileID: 4659470167885921237, guid: d9e2d2ce89818b64780f253c5de11b54,
-    type: 3}
-  lootObject: {fileID: 8896971654848504888, guid: 5f496855cfdf748408ccef04aee84997,
     type: 3}
 --- !u!54 &6611182094370535243
 Rigidbody:

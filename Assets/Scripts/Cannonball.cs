@@ -23,15 +23,7 @@ public class Cannonball : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Boat"))
-        { col.gameObject.SendMessage("OnCBHit", damage);
-            Destroy(this.gameObject);
-        }
-    }
-
-    private void AddVelocity(Vector3 newVelocity)
-    {
-        rb = GetComponent<Rigidbody>();
-        this.rb.AddForce(-(newVelocity * firingVelocity));
+        col.gameObject.SendMessage("OnCBHit", damage);
+        Destroy(this.gameObject);
     }
 }
