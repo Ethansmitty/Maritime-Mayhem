@@ -12,6 +12,7 @@ TagManager:
   - Config
   - MiniMap
   - DockTrigger
+  - Whirlpool
   layers:
   - Default
   - TransparentFX
@@ -49,6 +50,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Loot
+    uniqueID: 1686615637
+    locked: 0
   - name: Boats
     uniqueID: 4231333405
     locked: 0
@@ -60,7 +64,4 @@ TagManager:
     locked: 0
   - name: Cannon
     uniqueID: 1282212129
-    locked: 0
-  - name: Loot
-    uniqueID: 1686615637
     locked: 0
