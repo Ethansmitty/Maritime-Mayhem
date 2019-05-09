@@ -14,9 +14,9 @@ public class LootController : MonoBehaviour
         this.goldValue = Random.Range(Config.enemyGoldMin, Config.enemyGoldMax);
     }
 
-    private void OnCollisionEnter(Collision col)
+    private void OnTriggerEnter(Collider other)
     {
-        if (col.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             Player.GetComponent<Boat>().gold += goldValue;
             Destroy(this.gameObject);

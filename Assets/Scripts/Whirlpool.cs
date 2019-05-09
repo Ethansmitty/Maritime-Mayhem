@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Whirlpool : MonoBehaviour
 {
-	
+    public Config Config;
 	public GameObject boat;
-	public Rigidbody rb;
+	private Rigidbody rb;
     
 	
 	void Start(){
@@ -14,10 +14,16 @@ public class Whirlpool : MonoBehaviour
 		rb = boat.GetComponent<Rigidbody>();
 	}
     void OnTriggerEnter(Collider other) {
-		rb.drag = 5f;
+        if (other.CompareTag("Player"))
+        {
+            rb.drag = 5f;
+        }
 	}
 	
 	void OnTriggerExit(Collider other){
-		rb.drag = .75f;
+        if (other.CompareTag("Player"))
+        {
+            rb.drag = Config.playerDefaultDrag;
+        }
 	}
 }

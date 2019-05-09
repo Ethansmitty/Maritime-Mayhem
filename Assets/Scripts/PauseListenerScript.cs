@@ -8,6 +8,7 @@ public class PauseListenerScript : MonoBehaviour
     public static bool Paused = false;
     public Text PauseText;
     public Text ControlText;
+    public Button ExitButton;
 
     private void Update()
     {
@@ -24,6 +25,8 @@ public class PauseListenerScript : MonoBehaviour
             Paused = !Paused;
             PauseText.enabled = Paused;
             ControlText.enabled = Paused;
+            ExitButton.GetComponent<Image>().enabled = Paused;
+            ExitButton.GetComponentInChildren<Text>().enabled = Paused;
         }
     }
 }

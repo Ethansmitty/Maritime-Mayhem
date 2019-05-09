@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf73fd755b5e324794669b80ad15992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Config: {fileID: 4568340005732736446, guid: b724bbe6e83818e4dba37305729743d8, type: 3}
   boat: {fileID: 3516501518592096796, guid: f3fbc7d3d68988c409d97f753a9702f6, type: 3}
   rb: {fileID: 0}
 --- !u!1 &4937706086578745653
